@@ -2,6 +2,7 @@ import React from 'react'
 import Track from './Track'
 import { MdOutlineRemoveCircleOutline, MdEdit } from "react-icons/md";
 import { PlaylistContext } from '../App'
+import { Tooltip } from 'react-tooltip'
 
 export default function Playlist() {
     const [title, setTitle] = React.useState('New Playlist')
@@ -25,7 +26,10 @@ export default function Playlist() {
                     />
 
                     <div className="track-remove">
-                        <button type="button" onClick={() => removeFromPlaylist(trackDetail)}><MdOutlineRemoveCircleOutline /></button>
+                        <button className="track-remove-button" type="button" onClick={() => removeFromPlaylist(trackDetail)}><MdOutlineRemoveCircleOutline /></button>
+                        <Tooltip anchorSelect=".track-remove-button" place="bottom" className="track-remove-button-tooltip">
+                            Remove from Playlist
+                        </Tooltip>
                     </div>
                 </div>
             )

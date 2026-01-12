@@ -134,6 +134,11 @@ main {
   color: #1db954;
 }
 
+.track-add .track-add-button-tooltip,
+.track-remove .track-remove-button-tooltip {
+  background-color: #121212;
+}
+
 /* Playlist */
 
 .playlist-container .save-button {

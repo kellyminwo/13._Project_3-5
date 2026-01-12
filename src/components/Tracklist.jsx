@@ -2,6 +2,7 @@ import React from 'react'
 import Track from './Track'
 import { MdAddCircleOutline } from "react-icons/md";
 import { PlaylistContext } from '../App'
+import { Tooltip } from 'react-tooltip'
 
 export default function Tracklist({ results }) {
     const { setPlaylist } = React.useContext(PlaylistContext)
@@ -28,7 +29,10 @@ export default function Tracklist({ results }) {
                     />
 
                     <div className="track-add">
-                        <button type="button" onClick={() => addToPlaylist(trackDetail)}><MdAddCircleOutline /></button>
+                        <button className="track-add-button" type="button" onClick={() => addToPlaylist(trackDetail)}><MdAddCircleOutline /></button>
+                        <Tooltip anchorSelect=".track-add-button" place="bottom" className="track-add-button-tooltip">
+                            Add to Playlist
+                        </Tooltip>
                     </div>
                 </div>
             )
