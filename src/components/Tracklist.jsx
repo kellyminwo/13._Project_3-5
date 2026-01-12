@@ -30,7 +30,7 @@ export default function Tracklist({ results }) {
 
                     <div className="track-add">
                         <button className="track-add-button" type="button" onClick={() => addToPlaylist(trackDetail)}><MdAddCircleOutline /></button>
-                        <Tooltip anchorSelect=".track-add-button" place="bottom" className="track-add-button-tooltip">
+                        <Tooltip anchorSelect=".track-add-button" place="bottom" className="tooltip">
                             Add to Playlist
                         </Tooltip>
                     </div>

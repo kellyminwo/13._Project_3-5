@@ -134,12 +134,44 @@ main {
   color: #1db954;
 }
 
-.track-add .track-add-button-tooltip,
-.track-remove .track-remove-button-tooltip {
+.search-bar .tooltip,
+.track-add .tooltip,
+.track-remove .tooltip,
+.playlist-container .tooltip {
   background-color: #121212;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.35);
 }
 
 /* Playlist */
+
+.playlist-title {
+  display: inline-block;
+}
+
+input.playlist-title {
+  /* color: #1db954; */
+  font-family: inherit;
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 0.83em 0;
+  padding: 4px 0 10px 0;
+  box-shadow: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #1db954;
+  field-sizing: content;
+}
+
+input.playlist-title:focus {
+  outline: none;
+}
+
+button.playlist-title-edit-button,
+button.playlist-title-update-button {
+  font-size: 1.1em;
+  background-color: transparent;
+  border: none;
+}
 
 .playlist-container .save-button {
   display: flex;
