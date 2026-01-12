@@ -1,7 +1,9 @@
 import React from 'react'
 import { MdSearch } from "react-icons/md";
+import classNames from 'classnames'
 
-export default function SearchBar({ handleSearchValue }) {
+
+export default function SearchBar({ searchValue, handleSearchValue }) {
 
     const [inputValue, setInputValue] = React.useState('')
 
@@ -10,14 +12,16 @@ export default function SearchBar({ handleSearchValue }) {
         handleSearchValue(query)
     }
 
+    const classes = classNames('search-bar', { 'search-bar-start': !searchValue})
+
     return (
-        <section className="search-bar">
+        <section className={classes}>
             <form action={searchQuery}>
                 <input 
                     id="trackQuery" 
                     type="text" 
                     name="trackQuery" 
-                    placeholder="What would you like to add?" 
+                    placeholder="Search a song, artist, or album" 
                     value={inputValue}
                     onChange={e => setInputValue(e.target.value)} 
                 />

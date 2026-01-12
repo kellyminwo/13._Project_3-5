@@ -11,7 +11,6 @@ export default function SearchResults({ searchValue, tracks }) {
             track.album.toLowerCase().includes(searchValue.toLowerCase())
         )
     })
-    console.log(results)
 
     return (
         searchValue &&

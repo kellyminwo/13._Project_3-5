@@ -4,10 +4,15 @@ import SearchBar from './components/SearchBar'
 import SearchResults from './components/SearchResults'
 import Playlist from './components/Playlist'
 
+const PlaylistContext = React.createContext();
+
+// Use useContext to pass down a newly created state for the tracks clicked in the search results that will then be reflected in the playlist.
+
 export default function App() {
 
   const [searchValue, setSearchValue] = React.useState('')
   const [tracks, setTracks] = React.useState([])
+  const [playlist, setPlaylist] = React.useState([])
 
     React.useEffect(() => {
         fetch('/api/tracks')
@@ -18,16 +23,20 @@ export default function App() {
   return (
     <>
     <header>
-      <h1>Jammming</h1>
+      <img src="src/assets/jammming_logo-white.svg" className="logo" type="image/svg+xml"/>
       <p>Create a playlist with your favorite songs!</p>
     </header>
     <main>
-      <SearchBar handleSearchValue={ value => setSearchValue(value) } />
+      <SearchBar searchValue={searchValue} handleSearchValue={ value => setSearchValue(value) } />
       <section className="lists-container">
-        <SearchResults searchValue={ searchValue } tracks={ tracks } />
-        <Playlist />
+        <PlaylistContext value={{ playlist, setPlaylist }}>
+          <SearchResults searchValue={ searchValue } tracks={ tracks } />
+          <Playlist />
+        </PlaylistContext>
       </section>
     </main>
     </>
   )
 }
+
+export { PlaylistContext }

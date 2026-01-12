@@ -11,6 +11,16 @@ h1 {
   margin-bottom: 0;
 }
 
+header img.logo {
+  max-width: 300px;
+  margin-top: 30px;
+}
+
+header p {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -19,11 +29,19 @@ main {
 
 /* Search Bar */
 
+.search-bar {
+  margin: 3em 0 5em 0;
+  transition: margin 0.5s;
+}
+
+.search-bar-start {
+  margin: 10em 0 10em 0;
+}
+
 .search-bar form {
   display: flex;
   justify-content: end;
   justify-self: center;
-  margin: 8em 0 10em 0;
 }
 
 .search-bar input {
@@ -71,22 +89,26 @@ main {
   border-radius: 10px;
   padding: 35px 55px;
   text-align: left;
-  /* align-self: stretch; */
+  position: relative;
 }
 
 /* Tracks */
 
+.tracklist,
 .track-detail {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 15px;
+}
+
+.tracklist {  
   padding: 15px 20px;
   border-radius: 10px;
   transition: background-color 0.25s;
 }
 
-.track-detail:hover {
+.tracklist:hover {
   background-color: #535353;
 }
 
@@ -99,20 +121,24 @@ main {
   margin: 0;
 }
 
-.track-detail .track-add button {
+.tracklist .track-add button,
+.tracklist .track-remove button {
   background-color: transparent;
   border: none;
   font-size: 2em;
   transition: color 0.25s;
 }
 
-.track-detail .track-add button:hover {
+.tracklist .track-add button:hover,
+.tracklist .track-remove button:hover {
   color: #1db954;
 }
 
 /* Playlist */
 
-.playlist-container button {
+.playlist-container .save-button {
+  display: flex;
+  justify-self: center;
   background: #1db954;
   border: none;
   padding: 15px 25px;
@@ -121,10 +147,16 @@ main {
   font-weight: 700;
   color: #000;
   cursor: pointer;
+  margin: 45px 0 25px 0;
+  transition: all 0.25s;
 }
 
-.playlist-container button:disabled,
-.playlist-container button[disabled] {
+.playlist-container .save-button:hover {
+  background: #45bf70;
+}
+
+.playlist-container .save-button:disabled,
+.playlist-container .save-button[disabled] {
   background-color: #b3b3b3;
   color: #535353;
   cursor: not-allowed;
