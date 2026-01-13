@@ -4,7 +4,7 @@ import SearchBar from './components/SearchBar'
 import SearchResults from './components/SearchResults'
 import Playlist from './components/Playlist'
 
-const PlaylistContext = React.createContext();
+export const PlaylistContext = React.createContext()
 
 // Use useContext to pass down a newly created state for the tracks clicked in the search results that will then be reflected in the playlist.
 
@@ -23,7 +23,7 @@ export default function App() {
   return (
     <>
     <header>
-      <img src="src/assets/jammming_logo-white.svg" className="logo" type="image/svg+xml"/>
+      <img src="jammming_logo-white.svg" className="logo" type="image/svg+xml" alt="Jammming Logo" />
       <p>Create a playlist with your favorite songs!</p>
     </header>
     <main>
@@ -38,5 +38,3 @@ export default function App() {
     </>
   )
 }
-
-export { PlaylistContext }
